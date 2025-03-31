@@ -30,14 +30,14 @@ const FileHandler = {
                 // Validate imported data
                 if (!importedData.name || !Array.isArray(importedData.questions) || 
                     importedData.questions.length === 0) {
-                    throw new Error('Formato de arquivo inválido');
+                    throw new Error('Invalid file format');
                 }
 
                 // Load quiz into editor
                 EditorManager.loadQuiz(importedData);
                 
             } catch (error) {
-                alert('Erro ao importar quiz para edição: ' + error.message);
+                alert('Error importing quiz for editing: ' + error.message);
             }
         };
         reader.readAsText(file);
@@ -73,7 +73,7 @@ const FileHandler = {
                 }, 100);
                 
             } catch (error) {
-                alert('Erro ao importar quiz: ' + error.message);
+                alert('Error importing quiz: ' + error.message);
             }
         };
         reader.readAsText(file);
@@ -143,7 +143,7 @@ const FileHandler = {
                 // Validate imported data
                 if (!importedData.name || !Array.isArray(importedData.questions) || 
                     importedData.questions.length === 0) {
-                    throw new Error('Formato de arquivo inválido');
+                    throw new Error('Invalid file format');
                 }
 
                 // Switch to create quiz screen
@@ -178,13 +178,13 @@ const FileHandler = {
                                 </div>
                             `).join('')}
                         </div>
-                        <button type="button" class="secondary-button" onclick="addOption(this)">+ Adicionar Opção</button>
+                        <button type="button" class="secondary-button" onclick="addOption(this)">+ Add Option</button>
                         <div class="form-group">
                             <label>Resposta(s) Correta(s) (ex: 0,1)</label>
                             <input type="text" class="correct-answer-input" required value="${Array.isArray(questionData.correct) ? questionData.correct.join(',') : questionData.correct}">
                         </div>
                         <div class="question-card-footer">
-                            <button type="button" class="danger-button" onclick="removeQuestion(this)">Remover Questão</button>
+                            <button type="button" class="danger-button" onclick="removeQuestion(this)">Remove Question</button>
                         </div>
                     `;
                     
@@ -192,7 +192,7 @@ const FileHandler = {
                 });
                 
             } catch (error) {
-                alert('Erro ao importar quiz para edição: ' + error.message);
+                alert('Error importing quiz for editing: ' + error.message);
             }
         };
         reader.readAsText(file);

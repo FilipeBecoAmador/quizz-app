@@ -42,7 +42,7 @@ const EditorManager = {
             
         } catch (error) {
             console.error('Error loading quiz:', error);
-            alert('Erro ao carregar quiz: ' + error.message);
+            alert('Error loading quiz: ' + error.message);
         }
     },
 
@@ -68,7 +68,7 @@ const EditorManager = {
         });
 
         if (questions.length === 0) {
-            throw new Error('Nenhuma questão válida encontrada');
+            throw new Error('No valid questions found');
         }
 
         if (quizSize > questions.length) {

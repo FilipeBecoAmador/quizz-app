@@ -14,6 +14,14 @@ const QuizManager = {
         }
 
         this.resetState();
+        
+        // Hide results section and show quiz content
+        document.getElementById('results-section').style.display = 'none';
+        document.querySelector('.question').style.display = 'block';
+        document.querySelector('.options').style.display = 'block';
+        document.querySelector('.quiz-buttons').style.display = 'flex';
+        document.querySelector('.progress-bar').style.display = 'block';
+
         this.state.questions = questions;
         this.state.quizName = quizName;
         this.state.userAnswers = new Array(questions.length).fill().map(() => []);
@@ -145,14 +153,12 @@ const QuizManager = {
     },
 
     resetState: function() {
-        Object.assign(this.state, {
-            questions: [],
-            currentIndex: 0,
-            score: 0,
-            userAnswers: [],
-            wrongAnswers: [],
-            quizName: ''
-        });
+        this.state.questions = [];
+        this.state.currentIndex = 0;
+        this.state.score = 0;
+        this.state.userAnswers = [];
+        this.state.wrongAnswers = [];
+        this.state.quizName = '';
     },
 
     arraysEqual: function(a, b) {

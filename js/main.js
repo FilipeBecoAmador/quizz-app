@@ -23,8 +23,8 @@ const App = {
 
     showHome: function() {
         this.showScreen('home-screen');
-        // Reset any state if needed
-        EditorManager.reset();
+        // Reset quiz state when returning home
+        QuizManager.resetState();
     },
 
     showScreen: function(screenId) {

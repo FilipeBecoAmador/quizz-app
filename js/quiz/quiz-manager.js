@@ -107,15 +107,20 @@ const QuizManager = {
         document.getElementById('total-questions-score').textContent = this.state.questions.length;
 
         const wrongAnswersContainer = document.getElementById('wrong-answers');
-        wrongAnswersContainer.innerHTML = this.state.wrongAnswers.length > 0 
-            ? this.state.wrongAnswers.map((wrong, index) => `
-                <div class="wrong-answer-item">
-                    <p><strong>Questão ${index + 1}:</strong> ${wrong.question}</p>
-                    <p><strong>Sua resposta:</strong> ${Array.isArray(wrong.userAnswer) ? wrong.userAnswer.join(', ') : wrong.userAnswer}</p>
-                    <p><strong>Resposta correta:</strong> ${Array.isArray(wrong.correctAnswer) ? wrong.correctAnswer.join(', ') : wrong.correctAnswer}</p>
-                </div>
-            `).join('')
-            : '<p>Parabéns! Você acertou todas as questões!</p>';
+        if (this.state.wrongAnswers.length > 0) {
+            this.state.wrongAnswers.forEach((wrong, index) => {
+                const wrongAnswerElement = document.createElement('div');
+                wrongAnswerElement.className = 'wrong-answer-item';
+                wrongAnswerElement.innerHTML = `
+                    <p><strong>Question ${index + 1}:</strong> ${wrong.question}</p>
+                    <p><strong>Your answer:</strong> ${Array.isArray(wrong.userAnswer) ? wrong.userAnswer.join(', ') : wrong.userAnswer}</p>
+                    <p><strong>Correct answer:</strong> ${Array.isArray(wrong.correctAnswer) ? wrong.correctAnswer.join(', ') : wrong.correctAnswer}</p>
+                `;
+                wrongAnswersContainer.appendChild(wrongAnswerElement);
+            });
+        } else {
+            wrongAnswersContainer.innerHTML = '<p>Congratulations! You got all questions correct!</p>';
+        }
 
         document.getElementById('return-home').onclick = () => App.showHome();
     },

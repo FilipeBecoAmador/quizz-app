@@ -51,12 +51,12 @@ const EditorManager = {
         const quizSize = parseInt(document.getElementById('quiz-size').value);
         
         if (!quizName) {
-            throw new Error('Nome do quiz é obrigatório');
+            throw new Error('Quiz name is required');
         }
 
         const questionElements = document.querySelectorAll('.question-card');
         if (questionElements.length === 0) {
-            throw new Error('Adicione pelo menos uma questão');
+            throw new Error('Add at least one question');
         }
 
         const questions = [];
@@ -71,8 +71,8 @@ const EditorManager = {
             throw new Error('Nenhuma questão válida encontrada');
         }
 
-        if (quizSize && quizSize > questions.length) {
-            throw new Error('O tamanho do quiz não pode ser maior que o número de questões disponíveis');
+        if (quizSize > questions.length) {
+            throw new Error('Quiz size cannot be larger than the number of available questions');
         }
 
         return {

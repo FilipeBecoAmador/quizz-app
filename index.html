@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,26 +12,26 @@
     <div id="home-screen" class="screen active">
         <div class="menu-container">
             <h1>Quiz App</h1>
-            <button id="create-quiz-btn">Criar Quiz</button>
-            <button id="edit-quiz-btn">Editar Quiz</button>
-            <button id="take-quiz-btn">Realizar Quiz</button>
+            <button id="create-quiz-btn">Create Quiz</button>
+            <button id="edit-quiz-btn">Edit Quiz</button>
+            <button id="take-quiz-btn">Take Quiz</button>
         </div>
     </div>
 
     <div id="create-quiz-screen" class="screen">
         <div class="container">
             <header class="screen-header">
-                <h2>Criar Novo Quiz</h2>
+                <h2>Create New Quiz</h2>
             </header>
             <form id="create-quiz-form" class="quiz-form">
                 <div class="form-group">
-                    <label>Nome do Quiz</label>
+                    <label>Quiz Name</label>
                     <input type="text" id="quiz-name" required>
                 </div>
                 <div class="form-group">
-                    <label>Número de Questões no Quiz</label>
+                    <label>Number of Questions</label>
                     <input type="number" id="quiz-size" min="1" value="20" required>
-                    <span class="helper-text">Número de questões que serão selecionadas aleatoriamente do total de questões criadas</span>
+                    <span class="helper-text">Number of questions that will be randomly selected from the total questions created</span>
                 </div>
                 
                 <div id="questions-container">
@@ -40,11 +40,11 @@
 
                 <div class="form-buttons">
                     <div class="left-buttons">
-                        <button id="go-home-btn" class="main-button">Voltar</button>
+                        <button id="go-home-btn" class="main-button">Back</button>
                     </div>
                     <div class="right-buttons">
-                        <button type="button" id="add-question-btn" class="main-button">+ Adicionar Questão</button>
-                        <button type="button" id="export-quiz-btn" class="main-button">Exportar</button>
+                        <button type="button" id="add-question-btn" class="main-button">+ Add Question</button>
+                        <button type="button" id="export-quiz-btn" class="main-button">Export</button>
                     </div>
                 </div>
             </form>
@@ -57,7 +57,7 @@
             
             <div class="progress-bar">
                 <div class="progress-text">
-                    Questão <span id="current-question">1</span> de <span id="total-questions">0</span>
+                    Question <span id="current-question">1</span> of <span id="total-questions">0</span>
                 </div>
             </div>
             
@@ -67,23 +67,22 @@
             
             <div class="quiz-buttons">
                 <div class="left-buttons">
-                    <button id="prev-button">Anterior</button>
+                    <button id="prev-button">Previous</button>
                 </div>
                 <div class="right-buttons">
-                    <button id="next-button">Próxima</button>
+                    <button id="next-button">Next</button>
                 </div>
             </div>
             
-            <!-- Add results section -->
             <div id="results-section" class="results" style="display: none;">
-                <h2>Resultado do Quiz</h2>
+                <h2>Quiz Results</h2>
                 <div class="score-display">
-                    Pontuação: <span id="final-score">0</span> de <span id="total-questions-score">0</span>
+                    Score: <span id="final-score">0</span> of <span id="total-questions-score">0</span>
                 </div>
                 <div id="wrong-answers" class="wrong-answers">
                     <!-- Wrong answers will be inserted here -->
                 </div>
-                <button id="return-home" class="main-button">Voltar ao Início</button>
+                <button id="return-home" class="main-button">Return to Home</button>
             </div>
         </div>
     </div>

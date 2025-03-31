@@ -55,7 +55,7 @@ const FileHandler = {
                 // Validate imported data
                 if (!importedData.name || !Array.isArray(importedData.questions) || 
                     importedData.questions.length === 0 || !importedData.quizSize) {
-                    throw new Error('Formato de arquivo inválido');
+                    throw new Error('Invalid file format');
                 }
 
                 // First switch to quiz screen
@@ -107,7 +107,7 @@ const FileHandler = {
                 window.URL.revokeObjectURL(elem.href);
             }
         } catch (error) {
-            alert(error.message);
+            alert('Error exporting quiz: ' + error.message);
         } finally {
             // Reset export flag after a short delay
             setTimeout(() => {

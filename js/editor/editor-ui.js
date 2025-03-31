@@ -10,11 +10,11 @@ const EditorUI = {
         questionCard.className = 'question-card';
         questionCard.innerHTML = `
             <div class="question-header">
-                <textarea class="question-text" placeholder="Digite a questão"></textarea>
+                <textarea class="question-text" placeholder="Enter your question"></textarea>
                 <button type="button" class="remove-question" onclick="EditorUI.removeQuestion(this)">×</button>
             </div>
             <div class="options-container"></div>
-            <button type="button" class="add-option" onclick="EditorUI.addOption(this)">+ Adicionar Opção</button>
+            <button type="button" class="add-option" onclick="EditorUI.addOption(this)">+ Add Option</button>
         `;
 
         document.getElementById('questions-container').appendChild(questionCard);
@@ -34,7 +34,7 @@ const EditorUI = {
         const optionDiv = document.createElement('div');
         optionDiv.className = 'option-row';
         optionDiv.innerHTML = `
-            <textarea class="option-text" placeholder="Digite a opção"></textarea>
+            <textarea class="option-text" placeholder="Enter an option"></textarea>
             <input type="checkbox" class="correct-option">
             <button onclick="EditorUI.removeOption(this)">×</button>
         `;
